@@ -1,0 +1,11 @@
+Using a preprocessor Sass with a grid-based layout system.
+
+To run the project locally you need:
+
+Clone this repository.
+
+Install dependencies by writing the command in the terminal npm i
+
+Run the project in development mode 'npm run dev'
+
+Opened link in browser http://localhost:5173/

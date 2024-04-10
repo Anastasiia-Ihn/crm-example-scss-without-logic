@@ -1,0 +1,70 @@
+@use "../../utilities/variables" as var;
+@use "../../utilities/functions" as fn;
+@use "../../utilities/mixins" as mx;
+@use "../../utilities/placeholders";
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.board-item {
+  @extend %section-frame;
+
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 43px;
+
+  background-color: fn.get-color("dark-secondary-2");
+
+  @include mx.media-q("xl") {
+    background-color: fn.get-color("dark-secondary");
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+.board-left {
+}
+.board-caption {
+  @extend %accent-text;
+
+  margin-bottom: 8px;
+  color: fn.get-color("light-primary");
+}
+
+.board-details {
+  @extend %details;
+
+  margin-bottom: 20px;
+  color: fn.get-color("light-secondary");
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.person-thumb {
+  @include mx.frame(24px, $is-circle: true);
+}
+
+.person-caption {
+  @extend %details;
+}
+
+.board-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.board-tag {
+  @extend %details;
+  margin-bottom: auto;
+  text-align: center;
+  color: fn.get-color("light-secondary");
+}

@@ -1,0 +1,63 @@
+@use "../../utilities/variables" as var;
+@use "../../utilities/functions" as fn;
+@use "../../utilities/mixins" as mx;
+@use "../../utilities/placeholders";
+
+.co-workers {
+  grid-area: co-workers;
+
+  @include mx.media-q("xl") {
+    padding: 20px;
+    background-color: fn.get-color("dark-secondary-2");
+    border-radius: 12px;
+  }
+}
+
+.co-workers-wrapper {
+  min-height: 388px;
+  padding: 16px;
+  margin-bottom: 40px;
+
+  border-radius: 12px;
+  background-color: fn.get-color("dark-secondary-2");
+
+  @include mx.media-q("xl") {
+    min-height: 400px;
+    padding: 24px;
+    margin-bottom: 32px;
+    background-color: fn.get-color("dark-secondary");
+  }
+}
+
+.co-workers-title {
+  @extend %details;
+
+  margin-bottom: 28px;
+
+  @include mx.media-q("xl") {
+    margin-bottom: 36px;
+  }
+
+  span {
+    @extend %accent-text;
+  }
+}
+
+.co-workers-container {
+  @include mx.scroll-bar;
+  max-height: 296px;
+  overflow-y: auto;
+
+  @include mx.media-q("lg") {
+    margin-right: -12px;
+  }
+}
+
+.co-workers-board {
+  margin-bottom: 20px;
+}
+
+.show-more-btn {
+  display: block;
+  margin: 0 auto;
+}
